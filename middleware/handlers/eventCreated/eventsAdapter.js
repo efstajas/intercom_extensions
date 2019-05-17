@@ -4,7 +4,7 @@ module.exports = (eventType, req, user) => {
             return {fields: [
                 {
                     title: "Type",
-                    value: req.body.data.item.event_name
+                    value: req.data.item.event_name
                 },
                 {
                     title: "Employee E-Mail",
@@ -26,7 +26,7 @@ module.exports = (eventType, req, user) => {
             return {fields: [
                 {
                     title: "Type",
-                    value: req.body.data.item.event_name
+                    value: req.data.item.event_name
                 },
                 {
                     title: "Employee E-Mail",
@@ -45,12 +45,12 @@ module.exports = (eventType, req, user) => {
                 },
                 {
                     title: "Customer Name",
-                    value: req.body.data.item.metadata.customer_name,
+                    value: req.data.item.metadata.customer_name,
                     short: true
                 },
                 {
                     title: "Customer Email",
-                    value: req.body.data.item.metadata.customer_email,
+                    value: req.data.item.metadata.customer_email,
                     short: true
                 },
             ]}
@@ -59,7 +59,7 @@ module.exports = (eventType, req, user) => {
             return {fields: [
                 {
                     title: "Type",
-                    value: req.body.data.item.event_name
+                    value: req.data.item.event_name
                 },
                 {
                     title: "Employee E-Mail",
@@ -78,22 +78,22 @@ module.exports = (eventType, req, user) => {
                 },
                 {
                     title: "Customer Name",
-                    value: req.body.data.item.metadata.customer_name,
+                    value: req.data.item.metadata.customer_name,
                     short: true
                 },
                 {
                     title: "Customer Email",
-                    value: req.body.data.item.metadata.customer_email,
+                    value: req.data.item.metadata.customer_email,
                     short: true
                 },
                 {
                     title: "Customer Subscription Limit",
-                    value: req.body.data.item.metadata.customer_subscription_limit,
+                    value: req.data.item.metadata.customer_subscription_limit,
                     short: true
                 },
                 {
                     title: "Customer Allowance",
-                    value: req.body.data.item.metadata.customer_subscription_allowance,
+                    value: req.data.item.metadata.customer_subscription_allowance,
                     short: true
                 },
             ]}
@@ -102,7 +102,7 @@ module.exports = (eventType, req, user) => {
             return {fields: [
                 {
                     title: "Type",
-                    value: req.body.data.item.event_name
+                    value: req.data.item.event_name
                 },
                 {
                     title: "Employee E-Mail",
@@ -121,17 +121,17 @@ module.exports = (eventType, req, user) => {
                 },
                 {
                     title: "Order Number",
-                    value: req.body.data.item.metadata.order_number,
+                    value: req.data.item.metadata.order_number,
                     short: true
                 },
                 {
                     title: "Customer Name",
-                    value: req.body.data.item.metadata.customer_name,
+                    value: req.data.item.metadata.customer_name,
                     short: true
                 },
                 {
                     title: "Customer E-Mail",
-                    value: req.body.data.item.metadata.customer_email,
+                    value: req.data.item.metadata.customer_email,
                     short: true
                 },
             ]}
@@ -140,7 +140,7 @@ module.exports = (eventType, req, user) => {
             return {fields: [
                 {
                     title: "Type",
-                    value: "🎉🎁🎇 " + req.body.data.item.event_name + " WOOP WOOP 🎉🎁🎇"
+                    value: "🎉🎁🎇 " + req.data.item.event_name + " WOOP WOOP 🎉🎁🎇"
                 },
                 {
                     title: "Employee E-Mail",
@@ -159,17 +159,17 @@ module.exports = (eventType, req, user) => {
                 },
                 {
                     title: "Order Number",
-                    value: req.body.data.item.metadata.order_number,
+                    value: req.data.item.metadata.order_number,
                     short: true
                 },
                 {
                     title: "Customer Name",
-                    value: req.body.data.item.metadata.customer_name,
+                    value: req.data.item.metadata.customer_name,
                     short: true
                 },
                 {
                     title: "Customer E-Mail",
-                    value: req.body.data.item.metadata.customer_email,
+                    value: req.data.item.metadata.customer_email,
                     short: true
                 },
             ],
@@ -179,7 +179,7 @@ module.exports = (eventType, req, user) => {
             return {fields: [
                 {
                     title: "Type",
-                    value: req.body.data.item.event_name
+                    value: req.data.item.event_name
                 },
                 {
                     title: "Employee E-Mail",
@@ -198,17 +198,17 @@ module.exports = (eventType, req, user) => {
                 },
                 {
                     title: "Order Number",
-                    value: req.body.data.item.metadata.order_number,
+                    value: req.data.item.metadata.order_number,
                     short: true
                 },
                 {
                     title: "Customer Name",
-                    value: req.body.data.item.metadata.customer_name,
+                    value: req.data.item.metadata.customer_name,
                     short: true
                 },
                 {
                     title: "Customer E-Mail",
-                    value: req.body.data.item.metadata.customer_email,
+                    value: req.data.item.metadata.customer_email,
                     short: true
                 },
             ],
@@ -217,7 +217,7 @@ module.exports = (eventType, req, user) => {
                 {
                     type: "button",
                     text: "Employee Conversations 🗣",
-                    url: "https://app.intercom.io/a/apps/vq2ybedp/users/" + req.body.data.item.intercom_user_id + "/all-conversations", 
+                    url: "https://app.intercom.io/a/apps/vq2ybedp/users/" + req.data.item.intercom_user_id + "/all-conversations", 
                 }
             ]}
             break
