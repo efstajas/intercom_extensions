@@ -6,24 +6,27 @@ class Intercom {
         this.apiBase = 'https://api.intercom.io/'
     }
 
-    _authenticatedGet(url) {
-        return axios.get(`${this.apiBase}${url}`, {
+    _authenticatedRequest(method, url, data) {
+        return axios({
+            method: method,
+            url: `${this.apiBase}${url}`,
+            data: data ? data : null,
             headers: {
                 "Authorization": `Bearer ${this.token}`
             }
-        })
+        });
     }
 
     getConversations(id) {
         return new Promise(async (resolve, reject) => {
-            let response = await this._authenticatedGet(`conversations?type=user&open=true&intercom_user_id=${id}`)
+            let response = await this._authenticatedRequest('get', `conversations?type=user&open=true&intercom_user_id=${id}`)
             resolve(response)
         })
     }
 
     getUser(id) {
         return new Promise(async (resolve, reject) => {
-            let response = await this._authenticatedGet(`users/${id}`)
+            let response = await this._authenticatedRequest('get', `users/${id}`)
             resolve(response)
         })
     }
