@@ -7,7 +7,7 @@ module.exports = (data) => {
         let adaptedEvent = eventsAdapter(data.data.item.event_name, data, user.data)
 
         if (adaptedEvent) {
-            slack.postToChannel("Event on POS", adaptedEvent).then(() => {
+            slack.postToChannel("Beep boop 🤖", adaptedEvent).then(() => {
                 resolve()
             }).catch((e) => {
                 reject(e)
