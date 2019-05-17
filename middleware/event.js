@@ -1,5 +1,12 @@
 const handlers = require('./handlers')
 
+const mapHandler = (topic, data) => {
+    switch(topic) {
+        case "event.created":
+            return handlers.eventCreated(data)
+    }
+}
+
 module.exports = (req, res, next) => {
     console.log('Handling /event')
 
@@ -10,11 +17,4 @@ module.exports = (req, res, next) => {
         console.error(e)
         res.send(e)
     })
-}
-
-mapHandler = (topic, data) => {
-    switch(topic) {
-        case "event.created":
-            return handlers.eventCreated(data)
-    }
 }
