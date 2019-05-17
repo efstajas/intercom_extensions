@@ -217,7 +217,7 @@ module.exports = (eventType, req, user) => {
                 {
                     type: "button",
                     text: "Employee Conversations 🗣",
-                    url: "https://app.intercom.io/a/apps/byj92113/users/" + req.body.data.item.intercom_user_id + "/all-conversations", 
+                    url: "https://app.intercom.io/a/apps/vq2ybedp/users/" + req.body.data.item.intercom_user_id + "/all-conversations", 
                 }
             ]}
             break
