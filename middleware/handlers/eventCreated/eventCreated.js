@@ -4,7 +4,7 @@ module.exports = (data) => {
     return new Promise(async (resolve, reject) => {
         let user = await intercom.getUser(data.data.item.intercom_user_id)
 
-        let adaptedEvent = eventsAdapter(data.data.item.event_name, data, user)
+        let adaptedEvent = eventsAdapter(data.data.item.event_name, data, user.data)
 
         if (adaptedEvent) {
             slack.postToChannel("Event on POS", adaptedEvent).then(() => {
