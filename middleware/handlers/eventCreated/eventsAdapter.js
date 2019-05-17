@@ -1,3 +1,5 @@
+const getEightRandomPositiveEmojis = require('./getEightRandomPositiveEmojis')
+
 module.exports = (eventType, req, user) => {
     switch(eventType) {
         case "dismissed preflight":
@@ -140,7 +142,7 @@ module.exports = (eventType, req, user) => {
             return {fields: [
                 {
                     title: "Type",
-                    value: "🎉🎁🎇 " + req.data.item.event_name + " WOOP WOOP 🎉🎁🎇"
+                    value: `${getEightRandomPositiveEmojis()} AYYYYYYYYYY ${getEightRandomPositiveEmojis()}`
                 },
                 {
                     title: "Employee E-Mail",
