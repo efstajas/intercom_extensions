@@ -11,9 +11,9 @@ module.exports = () => {
         getRandomPositiveEmoji(),
         getRandomPositiveEmoji(),
         getRandomPositiveEmoji(),
-    ]
+    ].join('')
 }
 
 function getRandomPositiveEmoji() {
-    return positiveEmojis[Math.floor(Math.random()*positiveEmojis.length)]
+    return positiveEmojis[Math.floor(Math.random()*positiveEmojis.length)].emoji
 }
