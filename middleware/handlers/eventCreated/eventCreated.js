@@ -40,9 +40,10 @@ const handleEventToNote = async (data) => {
         const eventName = data.data.item.event_name
         const userId = data.data.item.intercom_user_id
         let conversations = await intercom.getConversations(userId)
-        conversations = intercom.ensureOpenConversations(conversations)
 
         if (conversations.length != 0) {
+            conversations = intercom.ensureOpenConversations(conversations)
+            
             let promises = [];
 
             conversations.forEach(c => {
