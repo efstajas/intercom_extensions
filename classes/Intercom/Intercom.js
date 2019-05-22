@@ -34,6 +34,7 @@ class Intercom {
         return this._authenticatedRequest('post', `conversations/${id}/reply`, {
             body: note,
             type: 'admin',
+            message_type: 'note',
             admin_id: this.adminId
         })
     }
