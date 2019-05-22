@@ -31,6 +31,7 @@ class Intercom {
     }
 
     addNoteOnConversation(id, note) {
+        console.log(`-- Writing note to conversation ${id}`)
         return this._authenticatedRequest('post', `conversations/${id}/reply`, {
             body: note,
             type: 'admin',
