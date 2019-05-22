@@ -2,7 +2,7 @@ const axios = require('axios')
 
 class Slack {
     constructor() {
-        this.channelHook = 'https://hooks.slack.com/services/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'
+        this.channelHook = process.env.SLACK_CHANNEL_HOOK
     }
 
     postToChannel(message, attachments) {
