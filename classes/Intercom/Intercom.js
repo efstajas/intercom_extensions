@@ -3,6 +3,7 @@ const axios = require('axios')
 class Intercom {
     constructor() {
         this.token = process.env.INTERCOM_KEY
+        this.adminId = process.env.INTERCOM_ADMIN_ID
         this.apiBase = 'https://api.intercom.io/'
     }
 
@@ -21,7 +22,19 @@ class Intercom {
         console.log(`-- Getting conversations for user ${id}`)
         return new Promise(async (resolve, reject) => {
             let response = await this._authenticatedRequest('get', `conversations?type=user&open=true&intercom_user_id=${id}`)
-            resolve(response)
+            resolve(response.data)
+        })
+    }
+
+    ensureOpenConversations(conversations) {
+        return conversations.filter(c => c.open && c.state === 'open' && c.assignee.type != 'nobody_admin')
+    }
+
+    addNoteOnConversation(id, note) {
+        return this._authenticatedRequest('get', `https://api.intercom.io/conversations/${id}/reply`, {
+            body: note,
+            type: admin,
+            admin_id: this.adminId
         })
     }
 
@@ -29,7 +42,7 @@ class Intercom {
         console.log(`-- Getting intercom user ${id}`)
         return new Promise(async (resolve, reject) => {
             let response = await this._authenticatedRequest('get', `users/${id}`)
-            resolve(response)
+            resolve(response.data)
         })
     }
 }
