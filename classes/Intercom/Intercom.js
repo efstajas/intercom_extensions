@@ -31,7 +31,7 @@ class Intercom {
     }
 
     addNoteOnConversation(id, note) {
-        return this._authenticatedRequest('get', `https://api.intercom.io/conversations/${id}/reply`, {
+        return this._authenticatedRequest('get', `conversations/${id}/reply`, {
             body: note,
             type: 'admin',
             admin_id: this.adminId
