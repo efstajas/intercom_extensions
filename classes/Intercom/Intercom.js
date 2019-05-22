@@ -22,7 +22,7 @@ class Intercom {
         console.log(`-- Getting conversations for user ${id}`)
         return new Promise(async (resolve, reject) => {
             let response = await this._authenticatedRequest('get', `conversations?type=user&open=true&intercom_user_id=${id}`)
-            resolve(response.data)
+            resolve(response.data.conversations)
         })
     }
 
