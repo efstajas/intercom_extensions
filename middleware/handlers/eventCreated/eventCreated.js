@@ -43,12 +43,12 @@ const handleEventToNote = async (data) => {
 
         if (conversations.length != 0) {
             conversations = intercom.ensureOpenConversations(conversations)
-            
+
             let promises = [];
 
             conversations.forEach(c => {
                 promises.push(intercom.addNoteOnConversation(
-                    userId,
+                    c.id,
                     `Event fired by user: ${eventName}`
                 ))
             })
