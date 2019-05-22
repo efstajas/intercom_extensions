@@ -14,3 +14,11 @@ INTERCOM_KEY=<intercom app access key>
 INTERCOM_ADMIN_ID=<id of the admin adding notes to conversations>
 SLACK_CHANNEL_HOOK=<channel hook URL for the notification channel>
 ```
+
+## Install
+
+`npm install`
+
+## Run
+
+`npm run start`
