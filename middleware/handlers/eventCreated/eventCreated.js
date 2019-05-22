@@ -18,8 +18,8 @@ module.exports = (data) => {
     })
 }
 
-const handleSlackMessage = async (data) => {
-    return new Promise((resolve, reject) => {
+const handleSlackMessage = (data) => {
+    return new Promise(async (resolve, reject) => {
         const user = await intercom.getUser(data.data.item.intercom_user_id)
         const adaptedEvent = eventsAdapter(data.data.item.event_name, data, user)
 
@@ -36,7 +36,7 @@ const handleSlackMessage = async (data) => {
 }
 
 const handleEventToNote = async (data) => {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
         const eventName = data.data.item.event_name
         const userId = data.data.item.intercom_user_id
         let conversations = await intercom.getConversations(userId)
@@ -61,4 +61,4 @@ const handleEventToNote = async (data) => {
             resolve()
         }
     })
-})
+}
